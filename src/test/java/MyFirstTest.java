@@ -1,3 +1,4 @@
+import config.EndPoint;
 import config.TestConfig;
 import org.junit.Test;
 
@@ -14,5 +15,13 @@ public class MyFirstTest extends TestConfig{
                 log().
                 all();
                 //.statusCode(200);
+    }
+
+    @Test
+    public void getAllGames(){
+        when().get(EndPoint.GET_VIDEOGAMES).
+                then().
+                log().
+                all();
     }
 }
