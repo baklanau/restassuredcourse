@@ -47,8 +47,8 @@ public class TestConfig {
         footballReqSpec = new RequestSpecBuilder().
                 setBaseUri("https://api.football-data.org").
                 setBasePath("/v1/").
-                addHeader("Content-type", "application/json").
-                addHeader("Accept", "application/json").
+                addHeader("X-Auth-Token", "302ffb3362e64a37805e136382545f0b").
+                addHeader("X-Response-Control", "minified").
                 build();
 
 
@@ -56,7 +56,7 @@ public class TestConfig {
                 expectStatusCode(200).
                 build();
 
-        //RestAssured.responseSpecification = videoGameRespSpec;
+        //RestAssured.responseSpecification = responseSpecification;
 
 
 
