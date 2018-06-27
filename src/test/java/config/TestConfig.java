@@ -20,7 +20,7 @@ public class TestConfig {
 //        RestAssured.basePath="/app/";
 
         //add this string if only fiddler is running
-        //RestAssured.proxy("localhost", 8888);
+        RestAssured.proxy("localhost", 8888);
 
 //        RequestSpecification requestSpecification = new RequestSpecBuilder().
 //                addHeader("Content-type", "application/json").
@@ -59,7 +59,7 @@ public class TestConfig {
                 expectStatusCode(200).
                 build();
 
-        //RestAssured.responseSpecification = responseSpecification;
+        RestAssured.responseSpecification = responseSpecification;
 
 
 
