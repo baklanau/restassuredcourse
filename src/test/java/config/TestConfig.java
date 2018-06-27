@@ -19,7 +19,8 @@ public class TestConfig {
 //        RestAssured.port=8080;
 //        RestAssured.basePath="/app/";
 
-        RestAssured.proxy("localhost", 8888);
+        //add this string if only fiddler is running
+        //RestAssured.proxy("localhost", 8888);
 
 //        RequestSpecification requestSpecification = new RequestSpecBuilder().
 //                addHeader("Content-type", "application/json").
@@ -42,7 +43,9 @@ public class TestConfig {
                 addHeader("Accept", "application/json").
                 build();
 
-        //RestAssured.requestSpecification = videoGameReqSpec;
+        //specification for videogames api
+        //videogames app should be run
+        RestAssured.requestSpecification = videoGameReqSpec;
 
         footballReqSpec = new RequestSpecBuilder().
                 setBaseUri("https://api.football-data.org").
