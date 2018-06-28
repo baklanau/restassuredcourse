@@ -20,7 +20,7 @@ public class TestConfig {
 //        RestAssured.basePath="/app/";
 
         //add this string if only fiddler is running
-        //RestAssured.proxy("localhost", 8888);
+        RestAssured.proxy("localhost", 8888);
 
 //        RequestSpecification requestSpecification = new RequestSpecBuilder().
 //                addHeader("Content-type", "application/json").
@@ -48,7 +48,7 @@ public class TestConfig {
         RestAssured.requestSpecification = videoGameReqSpec;
 
         footballReqSpec = new RequestSpecBuilder().
-                setBaseUri("https://api.football-data.org").
+                setBaseUri("http://api.football-data.org").
                 setBasePath("/v1/").
                 addHeader("X-Auth-Token", "302ffb3362e64a37805e136382545f0b").
                 addHeader("X-Response-Control", "minified").
