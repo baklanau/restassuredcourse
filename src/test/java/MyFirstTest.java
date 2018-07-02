@@ -11,7 +11,8 @@ public class MyFirstTest extends TestConfig{
         given().
                 log().
                 ifValidationFails().
-        when().get("videogames/1").
+        when().
+                get("videogames/1").
         then().
                 log().
                 all();
@@ -20,8 +21,9 @@ public class MyFirstTest extends TestConfig{
 
     @Test
     public void getAllGames(){
-        when().get(EndPoint.VIDEOGAMES).
-                then().
+        when().
+                get(EndPoint.VIDEOGAMES).
+        then().
                 log().
                 all();
     }
