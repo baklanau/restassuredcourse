@@ -6,6 +6,7 @@ import org.junit.Test;
 import static io.restassured.RestAssured.*;
 import static io.restassured.matcher.RestAssuredMatchers.matchesXsdInClasspath;
 import static io.restassured.module.jsv.JsonSchemaValidator.matchesJsonSchemaInClasspath;
+import static org.hamcrest.Matchers.lessThan;
 
 public class VideoGameDBTests extends TestConfig {
 
@@ -85,11 +86,19 @@ public class VideoGameDBTests extends TestConfig {
     @Test
     public void getSingleGame(){
 
+        //long responseTime =   - 28
         given().
                 pathParam("videoGameId", 5).
         when().
                 get(EndPoint.SINGLEGAME);
-        //get("/videogames/{videoGameId}");
+        //        time(); 28
+        //get("/videogames/{videoGameId}"); - 19
+
+        //System.out.println(responseTime); - 28
+
+        //28 alternative var
+        //then().
+        //        time(lessThan(900L));
     }
 
     //25 lesson - incorrect
