@@ -10,9 +10,9 @@ public class VideoGame
 
     private String rating;
 
-    private String reviewScore;
+    private int reviewScore;
 
-    public VideoGame(String id, String category, String releaseDate, String name, String rating, String reviewScore) {
+    public VideoGame(String id, String category, String releaseDate, String name, String rating, int reviewScore) {
         this.id = id;
         this.category = category;
         this.releaseDate = releaseDate;
@@ -71,12 +71,12 @@ public class VideoGame
         this.rating = rating;
     }
 
-    public String getReviewScore ()
+    public int getReviewScore ()
     {
         return reviewScore;
     }
 
-    public void setReviewScore (String reviewScore)
+    public void setReviewScore (int reviewScore)
     {
         this.reviewScore = reviewScore;
     }

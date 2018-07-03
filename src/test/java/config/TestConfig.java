@@ -47,7 +47,8 @@ public class TestConfig {
 
         //specification for videogames api
         //videogames app should be run
-        RestAssured.requestSpecification = videoGameReqSpec;
+        //RestAssured.requestSpecification = videoGameReqSpec;
+
 
         footballReqSpec = new RequestSpecBuilder().
                 setBaseUri("http://api.football-data.org").
@@ -56,6 +57,8 @@ public class TestConfig {
                 addHeader("X-Response-Control", "minified").
                 build();
 
+        RestAssured.requestSpecification = footballReqSpec;
+
 
         responseSpecification = new ResponseSpecBuilder().
                 expectStatusCode(200).
@@ -63,10 +66,6 @@ public class TestConfig {
                 build();
 
         RestAssured.responseSpecification = responseSpecification;
-
-
-
-
         }
 
 }

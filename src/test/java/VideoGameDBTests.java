@@ -101,12 +101,11 @@ public class VideoGameDBTests extends TestConfig {
         //        time(lessThan(900L));
     }
 
-    //25 lesson - incorrect
-    @Ignore
+    //25 lesson
     @Test
     public void testVideoGameSerialisationByJSON(){
         VideoGame videoGame =
-        new VideoGame("15", "shooter", "1998-12-10", "Name15", "99", "review");
+        new VideoGame("15", "shooter", "1998-12-10", "Name15", "PG-13", 99);
 
         given().
                 body(videoGame).
